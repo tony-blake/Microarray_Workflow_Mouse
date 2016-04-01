@@ -482,8 +482,16 @@ pie(rep(1,32),col=c2);   # show off these colors
 c3 <- c(c1,rev(c2));  # rev reverses the list
 #rm(c1,c2)
 
-######################################## Pathway Analysis ###################################
+######################################## Correlation Analysis ###################################
+ 
+# Here the degree of correlation between different gene ontologies is analysed based on the 
+# the differentailly expressed genes that they have in common.
 
+# The following pieces of code take the objects created from the GOstats analysis as input. It then creates a matrix of 
+# correlation values for gene ontologies and uses it to create a correlogram showing the percenatge of genes shared 
+# between gene ontologies in the form a clustered heatmap. It also creates a table of gene ontologies showing the over
+# represented genes in each ontology. Rows are ordered according to the clustering heatmap of correlation values. 
+ 
 #upregulated pathways
 
 bph1square <- makebeta1_pathwaygenetable(bph1GO)
