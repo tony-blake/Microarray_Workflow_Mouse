@@ -86,20 +86,25 @@ sapply(paste("data_GSE4788", cels, sep="/"), gunzip) # unzip .CEL files in data 
 
 ################################################# Begin  "phenodata.txt" file creation from commandline #############################################################################
 
-# $ cd "/Users/tonyblake/Desktop/Bioinformatics/parkinson_project/WorkFlow/data_GSE17204"
+# $ cd "/Users/tonyblake/Desktop/Bioinformatics/parkinson_project/GSE4788/data_GSE4788"
 # $ ls *.CEL > phenodata.txt
 # ....open in spreadsheet and create extra columns of data, copy all text and use "paste and match style" command to paste over original text in "phenodata.txt" file
 #  so that it looks like 
 #
-# Name  File_Name  Target
-# GSM430339.CEL  GSM430339.CEL  antisense_DJI_B
-# GSM430340.CEL  GSM430340.CEL  antisense_DJI_B
-# GSM430341.CEL	GSM430341.CEL	antisense_DJI_G
-# GSM430342.CEL	GSM430342.CEL	antisense_DJI_G
-# GSM430343.CEL	GSM430343.CEL	s_control_m
-# GSM430344.CEL	GSM430344.CEL	s_control_m
-# GSM430345.CEL	GSM430345.CEL	s_control_h
-# GSM430346.CEL	GSM430346.CEL	s_control_h
+# Name	File_Name	Target
+# GSM107845.CEL	GSM107845.CEL	control
+# GSM108079.CEL	GSM108079.CEL	control
+# GSM108080.CEL	GSM108080.CEL	control
+# GSM108081.CEL	GSM108081.CEL	control
+# GSM108084.CEL	GSM108084.CEL	MME
+# GSM108085.CEL	GSM108085.CEL	MME
+# GSM108086.CEL	GSM108086.CEL	MME
+# GSM108087.CEL	GSM108087.CEL	MME
+# GSM108088.CEL	GSM108088.CEL	MMF
+# GSM108089.CEL	GSM108089.CEL	MMF
+# GSM108090.CEL	GSM108090.CEL	MMF
+# GSM108091.CEL	GSM108091.CEL	MMF
+
 
 ####################################################### End "phenodata.txt" file creation ################################################################################## 
 
