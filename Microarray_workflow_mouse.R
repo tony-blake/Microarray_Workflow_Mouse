@@ -4,17 +4,15 @@
 
 # Description: This  Work Flow analyses microarray data (Human, Mouse and Rat)
 # for Gene Expression in Parkinson Disease Cases and considers genes of interest that 
-# relate to the neurotrophic sugnalling pathways involved in the () treatment of Parkinsons
+# relate treatment of Parkinsons
 
 # Genes of interest: 
-# GDNF: GDNF Ret tyrosine kinase (receptor) and GFR alpha 1, Shc, Src, FRS2, DOK 4/5, IRS1/2, GAB1, GRB2, AKT
-# Neurturin: Neurturin, Ret tyrosine kinase (receptor) and GFR alpha 2
-# GDF5: GDF5, BMPR1b, BMPR2, ROR2, SMAD1, SMAD4, SMAD5, SMAD 8, SMAD2, SMAD 3, Akt
-# CDNF
-# MKP1 or DuSP1
-# p38 alpha, beta, gamma and delta kinase
-# JNK1 JNK2, JNK3 kinase
-# ERK1, ERK2 and ERK5
+# For confidentiality purposes I have chosen to use some randomly generated data as the genes of interest in lieu of the actual genes of interest
+# Workflow -> Microarray data normilisation, generation of differentially expressed genes, 
+# selection of expression data for g.o.i,  prodcution of heatmap, GSEA Pathway Analysis using and GO
+
+
+
 
 # Workflow -> Microarray data normilisation, generation of differentially expressed genes, 
 # selection of expression data for g.o.i,  prodcution of heatmap, GSEA Pathway Analysis using and GO
@@ -178,9 +176,19 @@ fit2 <- eBayes(fit2)
 ##############################################################################################################
 
 #link gene symbols to affymatrix
-goi_symbols <- read.table("parkinson_goi.txt")
-#goi_symbols <- apply(goi_symbols, 2, function(x) toupper(x)) # use to change lowercase to uppercase  
-goi_symbols <- data.frame(goi_symbols)
+exprs <- exprs(expression)
+affyid=rownames(exprs)
+symbol2probe=hgu133a2SYMBOL[affyid]
+annots=toTable(symbol2probe)
+View(annots)
+
+
+##### create some random data for gene symbols (note that in proper use you would not "create random data" but use a real dataset
+##### such as a list of genes of interest for your particular project
+genes <- annots$symbol
+random_genes <- sample(genes, size=36, replace=TRUE)
+goi_symbols <- data.frame(random_genes)
+goi_symbols <- apply(goi_symbols, 2, function(x) tolower(x)) # use to change lowercase to uppercase
 genesofinterest <- goi_symbols$V1
 genesofinterest <- as.character(genesofinterest)
 mygenelist <- mget(genesofinterest, revmap(mgu74aSYMBOL), ifnotfound=NA) #use for human datasets only! 
