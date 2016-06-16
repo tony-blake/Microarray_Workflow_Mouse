@@ -12,8 +12,6 @@ In this repository there are 5 files that comprise a workflow for analysing the 
 
 "source_https.R" - function called in "workflowGSE17204.R" that can download and run other functions from a different users Github account
 
-"parkinson_goi.txt" - This text file contains a list of genes that are of interest in determing whether they are differentially expressed across the different experimental conditions
-
 "phenodata.txt" - meta data file. This needs to placed in the same directory as the .CEL files once they have been downlaoded.
 
 It should be noted also that the main file "MIcroarray_workflow_mouse.R" needs to be run in sections, each section being a code block. The reason for doing so is primarily to catch bugs but also because the metadata text file for the LIMMA needs to be created (directions for doing this are in the comments in "Microarray_workflow_mouse.R") After the .CEL files have been downlaoded they are placed in the data directory created from running the codeblock that downloaded the GEO data. It is in this directory that the metadata textfile needs to be placed.By doing this the next block of code will create an affybatch object for LIMMA.
