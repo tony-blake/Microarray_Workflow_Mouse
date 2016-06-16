@@ -8,13 +8,8 @@
 
 # Genes of interest: 
 # For confidentiality purposes I have chosen to use some randomly generated data as the genes of interest in lieu of the actual genes of interest
-# Workflow -> Microarray data normilisation, generation of differentially expressed genes, 
-# selection of expression data for g.o.i,  prodcution of heatmap, GSEA Pathway Analysis using and GO
 
-
-
-
-# Workflow -> Microarray data normilisation, generation of differentially expressed genes, 
+# Workflow -> Microarray data normalisation, generation of differentially expressed genes, 
 # selection of expression data for g.o.i,  prodcution of heatmap, GSEA Pathway Analysis using and GO
 
 # Install Packages
@@ -184,12 +179,12 @@ View(annots)
 
 
 ##### create some random data for gene symbols (note that in proper use you would not "create random data" but use a real dataset
-##### such as a list of genes of interest for your particular project
+##### such as a list of genes of interest for your particular project)
 genes <- annots$symbol
 random_genes <- sample(genes, size=36, replace=TRUE)
 goi_symbols <- data.frame(random_genes)
 goi_symbols <- apply(goi_symbols, 2, function(x) tolower(x)) # use to change lowercase to uppercase
-genesofinterest <- goi_symbols$V1
+genesofinterest <- goi_symbols$random_genes
 genesofinterest <- as.character(genesofinterest)
 mygenelist <- mget(genesofinterest, revmap(mgu74aSYMBOL), ifnotfound=NA) #use for human datasets only! 
 mygenedf <- do.call("rbind", lapply(mygenelist,data.frame)) # creates dataframe from gene and symbol list
