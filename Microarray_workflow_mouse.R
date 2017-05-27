@@ -10,7 +10,7 @@
 # For confidentiality purposes I have chosen to use some randomly generated data as the genes of interest in lieu of the actual genes of interest
 
 # Workflow -> Microarray data normalisation, generation of differentially expressed genes, 
-# selection of expression data for g.o.i,  prodcution of heatmap, GSEA Pathway Analysis using and GO
+# selection of expression data for g.o.i,  prodcution of heatmap, GSEA Pathway Analysis using GAGE and GO
 
 # Install Packages
 source('http://www.bioconductor.org/biocLite.R')
